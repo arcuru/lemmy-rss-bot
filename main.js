@@ -56,7 +56,7 @@ function log(message) {
 // -----------------------------------------------------------------------------
 // Databases
 
-const db = new sqlite3.Database("mega.sqlite3", (err) => {
+const db = new sqlite3.Database("database/mega.sqlite3", (err) => {
   if (err) {
     return console.error(err.message);
   }
@@ -134,7 +134,7 @@ const bot = new LemmyBot.LemmyBot({
     username: process.env.LEMMY_USERNAME,
     password: process.env.LEMMY_PASSWORD,
   },
-  dbFile: "db.sqlite3",
+  dbFile: "database/db.sqlite3",
   federation: {
     allowList: allowList,
   },
